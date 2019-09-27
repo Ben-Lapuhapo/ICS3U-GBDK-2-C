@@ -1,6 +1,7 @@
 #include <gb/gb.h>
 #include <stdio.h>
 #include "SmilerSprites.c"
+// Created By: Ben Lapuhapo
 
 void main(){
 	UINT8 currentspriteindex = 0;
