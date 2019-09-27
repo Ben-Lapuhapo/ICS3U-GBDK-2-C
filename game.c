@@ -1,7 +1,6 @@
 #include <gb/gb.h>
 #include <stdio.h>
 #include "SmilerSprites.c"
-// Created By: Ben Lapuhapo
 
 void main(){
 	UINT8 currentspriteindex = 0;
@@ -12,21 +11,15 @@ void main(){
 	SHOW_SPRITES;
 	
 	while(1){
-		switch(joypad()){
-			case J_LEFT:
-			scroll_sprite(0,-1,0);
-			break;
-			case J_RIGHT:
-			scroll_sprite(0,1,0);
-			break;
-			case J_UP:
-			scroll_sprite(0,0,-1);
-			break;
-			case J_LEFT:
-			scroll_sprite(0,0,1);
-			break;
+		if(currentspriteindex==0){
+			currentspriteindex = 1;
 		}
+		else{
+			currentspriteindex = 0;
+		}
+		set_sprite_tile(0, currentspriteindex);
 		delay(1000);
+		scroll_sprite(0,10,0);
 	}
 }
 	
